@@ -1,1 +1,227 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ujamaa EdTech | Workforce Training & Program Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f2ee; --gold: #c9a84c;
+      --gold-light: #e8d5a3; --rust: #8b3a2a; --sage: #4a5c4e;
+      --text: #1a1a1a; --muted: #6b6560;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; background: rgba(245,242,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.6rem 1.4rem; border-radius: 2px; font-weight: 500 !important; }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; position: relative; overflow: hidden; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 6rem; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,5vw,5rem); font-weight: 300; line-height: 1.1; color: var(--black); margin-bottom: 2rem; }
+    .hero h1 em { font-style: italic; color: var(--rust); }
+    .hero-desc { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 480px; margin-bottom: 3rem; font-weight: 300; }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; }
+    .btn-primary { background: var(--black); color: var(--white); padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--rust); }
+    .btn-secondary { color: var(--black); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.2s; }
+    .btn-secondary:hover { color: var(--gold); }
+    .hero-right { position: relative; overflow: hidden; background: var(--black); }
+    .hero-right-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem; background: linear-gradient(135deg,#1a1108 0%,#0e0e0e 60%); }
+    .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.06; background-image: repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%); background-size: 30px 30px; }
+    .hero-stat-group { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 2rem; }
+    .hero-stat { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
+    .hero-stat-label { font-size: 0.8rem; font-weight: 400; color: rgba(245,242,238,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-quote { position: relative; z-index: 2; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; font-weight: 300; color: rgba(245,242,238,0.7); line-height: 1.6; }
+    .hero-quote span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-style: normal; color: var(--gold); margin-top: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .definition-strip { background: var(--gold); padding: 2rem 6rem; display: flex; align-items: center; gap: 2rem; }
+    .definition-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--black); line-height: 1.6; }
+    .definition-strip strong { font-style: normal; font-weight: 600; }
+    section { padding: 7rem 6rem; }
+    .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,3.5vw,3.5rem); font-weight: 300; line-height: 1.15; color: var(--black); margin-bottom: 1.5rem; }
+    .section-title em { font-style: italic; color: var(--rust); }
+    .section-body { font-size: 1rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 560px; }
+    .services { background: #f0ece6; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.1); }
+    .service-card { padding: 3rem; border-right: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); transition: background 0.3s; position: relative; overflow: hidden; }
+    .service-card:hover { background: var(--white); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.3s; }
+    .service-card:hover::before { height: 100%; }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(0,0,0,0.08); line-height: 1; margin-bottom: 1rem; }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--black); margin-bottom: 0.75rem; }
+    .service-desc { font-size: 0.9rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
+    .audience { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .audience-cards { display: flex; flex-direction: column; gap: 1px; background: rgba(0,0,0,0.1); }
+    .audience-card { background: var(--white); padding: 2rem 2.5rem; display: flex; align-items: flex-start; gap: 1.5rem; transition: background 0.2s; cursor: default; }
+    .audience-card:hover { background: var(--black); }
+    .audience-card:hover .audience-card-title { color: var(--gold-light); }
+    .audience-card:hover .audience-card-desc { color: rgba(245,242,238,0.5); }
+    .audience-card:hover .audience-icon { color: var(--gold); }
+    .audience-icon { font-size: 1.5rem; margin-top: 0.2rem; transition: color 0.2s; }
+    .audience-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--black); margin-bottom: 0.4rem; transition: color 0.2s; }
+    .audience-card-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; transition: color 0.2s; }
+    .approach { background: var(--black); }
+    .approach .section-title { color: var(--white); }
+    .approach .section-body { color: rgba(245,242,238,0.5); }
+    .approach-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4rem; }
+    .approach-step { position: relative; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.3); }
+    .approach-step-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: rgba(201,168,76,0.2); line-height: 1; position: absolute; top: -1.5rem; right: 0; }
+    .approach-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.75rem; }
+    .approach-step-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,242,238,0.45); font-weight: 300; }
+    .cta-section { background: var(--rust); padding: 6rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,3vw,3rem); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .cta-section h2 em { font-style: italic; }
+    .btn-light { background: var(--white); color: var(--rust); padding: 1.1rem 2.5rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: background 0.2s; }
+    .btn-light:hover { background: var(--gold-light); }
+    footer { background: var(--black); padding: 4rem 6rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; border-top: 1px solid rgba(201,168,76,0.15); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 0.82rem; color: rgba(245,242,238,0.35); line-height: 1.7; font-weight: 300; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a { font-size: 0.85rem; color: rgba(245,242,238,0.45); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { background: var(--black); padding: 1.5rem 6rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(245,242,238,0.25); font-weight: 300; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.25s; }
+    .hero-desc { animation-delay: 0.4s; }
+    .hero-actions { animation-delay: 0.55s; }
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 5rem 2rem 3rem; }
+      section { padding: 5rem 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .audience { grid-template-columns: 1fr; }
+      .approach-steps { grid-template-columns: 1fr; }
+      .cta-section { grid-template-columns: 1fr; padding: 4rem 2rem; }
+      footer { grid-template-columns: 1fr; padding: 3rem 2rem; }
+      .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .definition-strip { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-logo">Ujamaa <span>EdTech</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#audience">Who We Serve</a></li>
+      <li><a href="#approach">Our Approach</a></li>
+      <li><a href="#contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Global Workforce Training & Program Development</p>
+      <h1>Where <em>cooperative</em> economics meets human potential</h1>
+      <p class="hero-desc">Ujamaa EdTech partners with universities, tech companies, and professional organizations to design, develop, and deliver AI-informed training programs that equip adult learners and professionals for the future of work.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Work With Us</a>
+        <a href="#services" class="btn-secondary">Explore Services →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-inner">
+        <div class="hero-pattern"></div>
+        <div class="hero-stat-group">
+          <div class="hero-stat"><div class="hero-stat-num">3-in-1</div><div class="hero-stat-label">Consult. Design. Deliver.</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">Global</div><div class="hero-stat-label">Reach & Perspective</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">AI</div><div class="hero-stat-label">Informed Methodology</div></div>
+        </div>
+        <div class="hero-quote">
+          <p>"Ujamaa — cooperative economics through community-driven innovation."</p>
+          <span>Our founding principle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="definition-strip">
+    <p><strong>Ujamaa (n.):</strong> A philosophy of cooperative economics — the belief that people rise further, faster, <em>together</em>. This is the principle behind every program we build.</p>
+  </div>
+  <section class="services" id="services">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Training solutions built for <em>real</em> professional growth</h2>
+    <p class="section-body">We don't deliver off-the-shelf content. Every engagement is designed around your learners, your goals, and the outcomes that actually matter.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-num">01</div><div class="service-title">Strategic Consulting</div><p class="service-desc">We assess your organization's learning ecosystem, identify gaps, and build a roadmap for scalable, AI-informed workforce development.</p></div>
+      <div class="service-card"><div class="service-num">02</div><div class="service-title">Program Design</div><p class="service-desc">Using evidence-based frameworks and culturally responsive pedagogy, we design training curricula, academic programs, and professional development pathways.</p></div>
+      <div class="service-card"><div class="service-num">03</div><div class="service-title">Training Delivery</div><p class="service-desc">We facilitate workshops, cohort programs, and digital learning experiences for professional audiences — grounded in adult learning theory and built for measurable outcomes.</p></div>
+      <div class="service-card"><div class="service-num">04</div><div class="service-title">AI Integration & Literacy</div><p class="service-desc">We help organizations embed AI tools responsibly into their learning and operational workflows — building human-centered competency, not dependency.</p></div>
+    </div>
+  </section>
+  <section id="audience">
+    <div class="audience">
+      <div>
+        <div class="section-label">Who We Serve</div>
+        <h2 class="section-title">Partners who believe <em>learning</em> is a strategic advantage</h2>
+        <p class="section-body">We work with institutions and organizations serious about closing skill gaps, building professional capacity, and preparing their people for a rapidly changing world.</p>
+      </div>
+      <div class="audience-cards">
+        <div class="audience-card"><div class="audience-icon">🎓</div><div><div class="audience-card-title">Universities & Higher Education</div><p class="audience-card-desc">Curriculum development, faculty training, AI literacy program design, and professional development facilitation.</p></div></div>
+        <div class="audience-card"><div class="audience-icon">💻</div><div><div class="audience-card-title">Technology Companies</div><p class="audience-card-desc">Onboarding programs, technical training, and AI integration curricula that translate complex tools into workforce-ready skills.</p></div></div>
+        <div class="audience-card"><div class="audience-icon">🏛️</div><div><div class="audience-card-title">Government & Institutions</div><p class="audience-card-desc">Workforce readiness and professional upskilling programs for public sector teams navigating digital transformation.</p></div></div>
+        <div class="audience-card"><div class="audience-icon">🚀</div><div><div class="audience-card-title">Entrepreneurs & Professionals</div><p class="audience-card-desc">Training and strategy for adult learners building skills, pivoting careers, or launching ventures in the AI economy.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="approach" id="approach">
+    <div class="section-label" style="color: var(--gold);">Our Approach</div>
+    <h2 class="section-title">Evidence-based. <em>Human-centered.</em> AI-informed.</h2>
+    <p class="section-body">We bring together instructional systems design, adult learning theory, and AI methodology to build programs that are rigorous, relevant, and built to last.</p>
+    <div class="approach-steps">
+      <div class="approach-step"><div class="approach-step-num">01</div><div class="approach-step-title">Discover & Assess</div><p class="approach-step-desc">We start with your learners, your gaps, and your goals — not a template. Every engagement begins with listening.</p></div>
+      <div class="approach-step"><div class="approach-step-num">02</div><div class="approach-step-title">Design & Develop</div><p class="approach-step-desc">Using ADDIE and LXD frameworks, we build learning experiences that are accessible, measurable, and scalable.</p></div>
+      <div class="approach-step"><div class="approach-step-num">03</div><div class="approach-step-title">Deliver & Evaluate</div><p class="approach-step-desc">We facilitate, implement, and measure — then refine. Learning that doesn't produce outcomes isn't learning; it's just content.</p></div>
+    </div>
+  </section>
+  <div class="cta-section" id="contact">
+    <h2>Ready to build something <em>that works?</em> Let's talk.</h2>
+    <a href="mailto:AsamoahUET@gmail.com" class="btn-light">Start the Conversation</a>
+  </div>
+  <footer>
+    <div>
+      <div class="footer-logo">Ujamaa <span>EdTech</span></div>
+      <p class="footer-tagline">Global workforce training and program development. AI-informed. Human-centered. Built for the future of work.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Strategic Consulting</a></li>
+        <li><a href="#services">Program Design</a></li>
+        <li><a href="#services">Training Delivery</a></li>
+        <li><a href="#services">AI Integration & Literacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:AsamoahUET@gmail.com">AsamoahUET@gmail.com</a></li>
+        <li><a href="tel:+18045497707">+1 804-549-7707</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2026 Ujamaa Educational Technologies. All rights reserved.</p>
+    <p>Global Workforce Training & Program Development</p>
+  </div>
+</body>
+  </html>
