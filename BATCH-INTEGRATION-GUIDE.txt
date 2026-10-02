@@ -1,0 +1,49 @@
+UET PORTFOLIO — BATCH INTEGRATION GUIDE
+
+This package is designed to be integrated ONCE, then published once.
+
+FILES TO ADD
+- styles.css
+- intro-to-coding.html
+- primary-digital-technology.html
+- junior-high-ib-style.html
+- assets/intro-to-coding/
+- assets/primary-digital-technology/
+- assets/junior-high-ib-style/
+
+MAIN PORTFOLIO
+Add three portfolio cards/buttons to the existing portfolio page:
+
+01 — Intro to Coding
+Link: intro-to-coding.html
+
+02 — Primary School Digital Technology Curriculum
+Link: primary-digital-technology.html
+
+03 — Jr. High School IB-Style Curriculum
+Link: junior-high-ib-style.html
+
+EVIDENCE CONNECTION
+The case-study pages currently contain clearly marked evidence areas. Replace those placeholders with relative links to the actual UET PDFs/assets already approved for the portfolio.
+
+IMPORTANT
+Do not upload or publish #4 The Power of West African Influence on STEM Globally or #5 E.M.P.O.W.E.R. Her™ Framework as part of this batch.
+
+Do not claim:
+- client deployment
+- school implementation
+- measured learner outcomes
+- IB authorization
+- formal GES approval
+- client revenue/results
+
+Recommended GitHub workflow:
+1. Back up/download the current repository.
+2. Add all three HTML pages and the shared stylesheet.
+3. Add the actual evidence assets.
+4. Update the main portfolio navigation/cards.
+5. Check every relative link.
+6. Test locally if possible.
+7. Review mobile and desktop presentation.
+8. Commit ALL changes together.
+9. Publish ONE time.
