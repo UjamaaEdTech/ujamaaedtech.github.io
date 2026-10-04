@@ -53,6 +53,19 @@
     .section-title em { font-style: italic; color: var(--rust); }
     .section-body { font-size: 1rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 560px; }
     .services { background: #f0ece6; }
+    .proof { background: var(--white); }
+    .proof-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; }
+    .proof-heading .section-title { margin-bottom: 1rem; }
+    .proof-heading .section-body { margin-bottom: 0; }
+    .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 4rem; }
+    .proof-card { display: flex; flex-direction: column; min-height: 330px; background: var(--black); color: var(--white); text-decoration: none; border-top: 4px solid var(--gold); transition: transform .25s, background .25s; }
+    .proof-card:hover { transform: translateY(-6px); background: #171717; }
+    .proof-card-top { display:flex; justify-content:space-between; padding: 1.25rem 1.5rem; color: var(--gold-light); font-size:.68rem; font-weight:500; letter-spacing:.11em; text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,.18); }
+    .proof-card-body { padding: 2rem 1.5rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+    .proof-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; line-height:1.1; color:var(--white); margin-bottom:1rem; }
+    .proof-card p { font-size:.88rem; line-height:1.75; color:rgba(245,242,238,.58); font-weight:300; }
+    .proof-link { margin-top:auto; padding-top:2rem; color:var(--gold-light); font-size:.76rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
+
     .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.1); }
     .service-card { padding: 3rem; border-right: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); transition: background 0.3s; position: relative; overflow: hidden; }
     .service-card:hover { background: var(--white); }
@@ -113,6 +126,8 @@
       section { padding: 5rem 2rem; }
       .services-grid { grid-template-columns: 1fr; }
       .audience { grid-template-columns: 1fr; }
+      .proof-heading { flex-direction: column; align-items: flex-start; }
+      .proof-grid { grid-template-columns: 1fr; }
       .approach-steps { grid-template-columns: 1fr; }
       .cta-section { grid-template-columns: 1fr; padding: 4rem 2rem; }
       footer { grid-template-columns: 1fr; padding: 3rem 2rem; }
@@ -172,6 +187,42 @@
       <div class="service-card"><div class="service-num">04</div><div class="service-title">Improve Learning Technology</div><p class="service-desc">Assess learning ecosystems, select practical tools, improve digital workflows, and connect technology decisions to learning goals.</p><a href="#contact" class="service-link">Discuss your technology needs →</a></div>
       <div class="service-card"><div class="service-num">05</div><div class="service-title">Develop AI Literacy</div><p class="service-desc">Build practical AI literacy programs that help teams understand, evaluate, and use AI tools responsibly in their work.</p><a href="#contact" class="service-link">Discuss AI literacy →</a></div>
       <div class="service-card"><div class="service-num">06</div><div class="service-title">Design an Education Program</div><p class="service-desc">Bring together curriculum, instruction, technology, and implementation strategy to build an education or professional development program from the ground up.</p><a href="#contact" class="service-link">Discuss a program →</a></div>
+    </div>
+  </section>
+  <section class="proof" id="work">
+    <div class="section-label">Proof of Capability</div>
+    <div class="proof-heading">
+      <div>
+        <h2 class="section-title">See how the work <em>comes together.</em></h2>
+        <p class="section-body">Explore selected UET work across curriculum design, digital technology education, and structured learning experiences. These projects show how we turn complex subject matter into usable learning systems.</p>
+      </div>
+      <a href="erika_portfolio.html" class="btn-secondary">View Full Portfolio →</a>
+    </div>
+    <div class="proof-grid">
+      <a class="proof-card" href="intro-to-coding.html">
+        <div class="proof-card-top"><span>Curriculum · Digital Learning</span><span>01</span></div>
+        <div class="proof-card-body">
+          <h3>Intro to Coding</h3>
+          <p>A primary-level coding learning experience designed around sequencing, algorithms, activities, and hands-on practice.</p>
+          <span class="proof-link">Explore the work →</span>
+        </div>
+      </a>
+      <a class="proof-card" href="primary-digital-technology.html">
+        <div class="proof-card-top"><span>Curriculum Development</span><span>02</span></div>
+        <div class="proof-card-body">
+          <h3>Primary School Digital Technology</h3>
+          <p>A structured digital technology curriculum translating technical concepts into age-appropriate learning experiences.</p>
+          <span class="proof-link">Explore the work →</span>
+        </div>
+      </a>
+      <a class="proof-card" href="junior-high-ib-style.html">
+        <div class="proof-card-top"><span>Curriculum · Learning Design</span><span>03</span></div>
+        <div class="proof-card-body">
+          <h3>Jr. High School IB-Style Curriculum</h3>
+          <p>A learning architecture integrating subject content with inquiry, learner development, and transferable skills.</p>
+          <span class="proof-link">Explore the work →</span>
+        </div>
+      </a>
     </div>
   </section>
   <section id="audience">
