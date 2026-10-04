@@ -53,11 +53,14 @@
     .section-title em { font-style: italic; color: var(--rust); }
     .section-body { font-size: 1rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 560px; }
     .services { background: #f0ece6; }
-    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.1); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.1); }
     .service-card { padding: 3rem; border-right: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); transition: background 0.3s; position: relative; overflow: hidden; }
     .service-card:hover { background: var(--white); }
     .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.3s; }
     .service-card:hover::before { height: 100%; }
+    .service-link { display: inline-block; margin-top: 1.25rem; color: var(--rust); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; border-bottom: 1px solid rgba(139,58,42,0.35); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .service-link:hover { color: var(--black); border-color: var(--black); }
+
     .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(0,0,0,0.08); line-height: 1; margin-bottom: 1rem; }
     .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--black); margin-bottom: 0.75rem; }
     .service-desc { font-size: 0.9rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
@@ -159,14 +162,16 @@
     <p><strong>Ujamaa (n.):</strong> A philosophy of cooperative economics — the belief that people rise further, faster, <em>together</em>. This is the principle behind every program we build.</p>
   </div>
   <section class="services" id="services">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Training solutions built for <em>real</em> professional growth</h2>
-    <p class="section-body">We don't deliver off-the-shelf content. Every engagement is designed around your learners, your goals, and the outcomes that actually matter.</p>
+    <div class="section-label">Start With Your Need</div>
+    <h2 class="section-title">What do you need to <em>build?</em></h2>
+    <p class="section-body">Tell us what you are trying to create, improve, or scale. Ujamaa EdTech can design the learning experience, curriculum, training program, or technology-enabled solution around your goals.</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-num">01</div><div class="service-title">Strategic Consulting</div><p class="service-desc">We assess your organization's learning ecosystem, identify gaps, and build a roadmap for scalable, AI-informed workforce development.</p></div>
-      <div class="service-card"><div class="service-num">02</div><div class="service-title">Program Design</div><p class="service-desc">Using evidence-based frameworks and culturally responsive pedagogy, we design training curricula, academic programs, and professional development pathways.</p></div>
-      <div class="service-card"><div class="service-num">03</div><div class="service-title">Training Delivery</div><p class="service-desc">We facilitate workshops, cohort programs, and digital learning experiences for professional audiences — grounded in adult learning theory and built for measurable outcomes.</p></div>
-      <div class="service-card"><div class="service-num">04</div><div class="service-title">AI Integration & Literacy</div><p class="service-desc">We help organizations embed AI tools responsibly into their learning and operational workflows — building human-centered competency, not dependency.</p></div>
+      <div class="service-card"><div class="service-num">01</div><div class="service-title">Build a Curriculum</div><p class="service-desc">Create a new curriculum, strengthen an existing one, or translate subject-matter expertise into a structured learning pathway.</p><a href="#contact" class="service-link">Discuss a curriculum project →</a></div>
+      <div class="service-card"><div class="service-num">02</div><div class="service-title">Build Digital Learning</div><p class="service-desc">Turn content into engaging eLearning, LMS-ready learning experiences, instructional materials, and digital learning products.</p><a href="#contact" class="service-link">Discuss digital learning →</a></div>
+      <div class="service-card"><div class="service-num">03</div><div class="service-title">Train Your Workforce</div><p class="service-desc">Design workshops, professional development, cohort programs, and workforce learning experiences around the skills your people need.</p><a href="#contact" class="service-link">Discuss workforce training →</a></div>
+      <div class="service-card"><div class="service-num">04</div><div class="service-title">Improve Learning Technology</div><p class="service-desc">Assess learning ecosystems, select practical tools, improve digital workflows, and connect technology decisions to learning goals.</p><a href="#contact" class="service-link">Discuss your technology needs →</a></div>
+      <div class="service-card"><div class="service-num">05</div><div class="service-title">Develop AI Literacy</div><p class="service-desc">Build practical AI literacy programs that help teams understand, evaluate, and use AI tools responsibly in their work.</p><a href="#contact" class="service-link">Discuss AI literacy →</a></div>
+      <div class="service-card"><div class="service-num">06</div><div class="service-title">Design an Education Program</div><p class="service-desc">Bring together curriculum, instruction, technology, and implementation strategy to build an education or professional development program from the ground up.</p><a href="#contact" class="service-link">Discuss a program →</a></div>
     </div>
   </section>
   <section id="audience">
