@@ -25,22 +25,22 @@
     .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 6rem; position: relative; z-index: 2; }
     .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,5vw,5rem); font-weight: 300; line-height: 1.1; color: var(--black); margin-bottom: 2rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.1rem,5.4vw,5.4rem); font-weight: 600; line-height: 1.02; color: var(--black); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
     .hero h1 em { font-style: italic; color: var(--rust); }
-    .hero-desc { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 480px; margin-bottom: 3rem; font-weight: 300; }
-    .hero-actions { display: flex; gap: 1rem; align-items: center; }
-    .btn-primary { background: var(--black); color: var(--white); padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--rust); }
+    .hero-desc { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 540px; margin-bottom: 2rem; font-weight: 300; }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.75rem; }
+    .btn-primary { background: var(--rust); color: var(--white); padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--black); }
     .btn-secondary { color: var(--black); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.2s; }
     .btn-secondary:hover { color: var(--gold); }
     .hero-right { position: relative; overflow: hidden; background: var(--black); }
     .hero-right-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem; background: linear-gradient(135deg,#1a1108 0%,#0e0e0e 60%); }
     .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.06; background-image: repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%); background-size: 30px 30px; }
-    .hero-stat-group { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 2rem; }
+    .hero-stat-group { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1.5rem; }
     .hero-stat { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
-    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.65rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
     .hero-stat-label { font-size: 0.8rem; font-weight: 400; color: rgba(245,242,238,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
-    .hero-quote { position: relative; z-index: 2; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .hero-quote { position: relative; z-index: 2; margin-top: 2.25rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
     .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; font-weight: 300; color: rgba(245,242,238,0.7); line-height: 1.6; }
     .hero-quote span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-style: normal; color: var(--gold); margin-top: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .definition-strip { background: var(--gold); padding: 2rem 6rem; display: flex; align-items: center; gap: 2rem; }
@@ -96,6 +96,7 @@
     .footer-bottom p { font-size: 0.78rem; color: rgba(245,242,238,0.25); font-weight: 300; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .hero-left > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+    .hero-proof { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); line-height: 1.7; max-width: 560px; }
     .hero-eyebrow { animation-delay: 0.1s; }
     .hero h1 { animation-delay: 0.25s; }
     .hero-desc { animation-delay: 0.4s; }
@@ -129,21 +130,22 @@
   </nav>
   <section class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Global Workforce Training & Program Development</p>
-      <h1>Where <em>cooperative</em> economics meets human potential</h1>
-      <p class="hero-desc">Ujamaa EdTech partners with universities, tech companies, and professional organizations to design, develop, and deliver AI-informed training programs that equip adult learners and professionals for the future of work.</p>
+      <p class="hero-eyebrow">Learning & Technology Solutions for Organizations Ready to Grow</p>
+      <h1>Turn complex information into <em>practical capability.</em></h1>
+      <p class="hero-desc">Ujamaa EdTech designs curricula, digital learning, workforce training, and technology-enabled programs that help organizations build the skills, systems, and capabilities their people need to perform.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Work With Us</a>
-        <a href="#services" class="btn-secondary">Explore Services →</a>
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#work" class="btn-secondary">See Our Work →</a>
       </div>
+      <p class="hero-proof">Curriculum Development · eLearning · Workforce Training · EdTech Consulting · AI Literacy</p>
     </div>
     <div class="hero-right">
       <div class="hero-right-inner">
         <div class="hero-pattern"></div>
         <div class="hero-stat-group">
-          <div class="hero-stat"><div class="hero-stat-num">3-in-1</div><div class="hero-stat-label">Consult. Design. Deliver.</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">Global</div><div class="hero-stat-label">Reach & Perspective</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">AI</div><div class="hero-stat-label">Informed Methodology</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">Design</div><div class="hero-stat-label">Curriculum & Learning Experiences</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">Build</div><div class="hero-stat-label">Digital Learning & Training Programs</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">Enable</div><div class="hero-stat-label">Technology & AI Literacy</div></div>
         </div>
         <div class="hero-quote">
           <p>"Ujamaa — cooperative economics through community-driven innovation."</p>
@@ -152,7 +154,7 @@
       </div>
     </div>
   </section>
-  <div class="definition-strip">
+  <div class="definition-strip" id="ujamaa-definition">
     <p><strong>Ujamaa (n.):</strong> A philosophy of cooperative economics — the belief that people rise further, faster, <em>together</em>. This is the principle behind every program we build.</p>
   </div>
   <section class="services" id="services">
