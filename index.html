@@ -11,31 +11,31 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--black:#0e0e0e;--white:#f5f2ee;--gold:#c9a84c;--gold-light:#e8d5a3;--rust:#8b3a2a;--green:#214f3a;--text:#1a1a1a;--muted:#6b6560;--soft:#f0ece6}
-    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}a{color:inherit}
+    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;font-size:17px}a{color:inherit}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(245,242,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.22)}
     .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:600;letter-spacing:.03em;color:var(--black);text-decoration:none}.nav-logo span{color:var(--gold)}
     .nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}.nav-links a{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--gold)}.nav-cta{background:var(--rust);color:var(--white)!important;padding:.65rem 1.25rem;border-radius:2px}
     .hero{min-height:92vh;display:grid;grid-template-columns:1.12fr .88fr;padding-top:76px;position:relative;overflow:hidden}.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5.5rem 4rem 5.5rem 6rem;position:relative;z-index:2}
     .eyebrow,.section-label{font-size:.88rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9b7624;margin-bottom:1.15rem;display:flex;align-items:center;gap:.75rem}.eyebrow::before,.section-label::before{content:'';display:block;width:2.3rem;height:2px;background:#9b7624}
     .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.3rem,5.8vw,5.7rem);font-weight:600;line-height:1.01;color:var(--black);margin-bottom:1.3rem;letter-spacing:-.025em}.hero h1 em,.section-title em{font-style:italic;color:var(--rust)}
-    .hero-desc{font-size:1.06rem;line-height:1.78;color:var(--muted);max-width:600px;margin-bottom:2rem;font-weight:300}.hero-actions{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
+    .hero-desc{font-size:1.12rem;line-height:1.78;color:var(--muted);max-width:600px;margin-bottom:2rem;font-weight:300}.hero-actions{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
     .btn-primary{background:var(--rust);color:var(--white);padding:1rem 1.8rem;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px}.btn-primary:hover{background:var(--black)}
     .btn-secondary{color:var(--black);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}.btn-secondary:hover{color:var(--gold)}
     .hero-proof{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.7;max-width:620px}
     .hero-right{position:relative;overflow:hidden;background:var(--black)}.hero-right-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem;background:linear-gradient(135deg,#1a1108 0%,#0e0e0e 60%)}.hero-pattern{position:absolute;inset:0;opacity:.06;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:30px 30px}
     .hero-panel{position:relative;z-index:2;border-top:1px solid rgba(201,168,76,.28);padding-top:1.8rem}.hero-panel h2{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:300;color:var(--gold-light);line-height:1.1;margin-bottom:1rem}.hero-panel p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(245,242,238,.65);line-height:1.55}
-    section{padding:6.5rem 6rem}.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;line-height:1.12;color:var(--black);margin-bottom:1.3rem}.section-body{font-size:1rem;line-height:1.85;color:var(--muted);font-weight:300;max-width:650px}
+    section{padding:6.5rem 6rem}.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;line-height:1.12;color:var(--black);margin-bottom:1.3rem}.section-body{font-size:1.08rem;line-height:1.85;color:var(--muted);font-weight:300;max-width:650px}
     .ecosystem{background:var(--black);color:var(--white)}.ecosystem .section-label{color:var(--gold-light)}.ecosystem .section-label::before{background:var(--gold)}.ecosystem .section-title{color:var(--white)}.ecosystem .section-body{color:rgba(245,242,238,.58)}
-    .ecosystem-head{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.22);margin-top:3.5rem}.ecosystem-card{background:#141414;padding:2.2rem;min-height:230px;text-decoration:none;transition:background .2s,transform .2s}.ecosystem-card:hover{background:#1d1d1d;transform:translateY(-3px)}.ecosystem-card .num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold)}.ecosystem-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--white);margin:.7rem 0}.ecosystem-card p{font-size:.86rem;line-height:1.75;color:rgba(245,242,238,.5)}.ecosystem-card .link{display:block;margin-top:1.2rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-    .edtech-feature{background:var(--soft)}.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:6rem;align-items:center}.feature-kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.7rem}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.1);margin-top:1.8rem}.feature-list div{background:var(--white);padding:1.2rem 1.3rem}.feature-list strong{font-size:.86rem}.feature-list span{display:block;color:var(--muted);font-size:.76rem;margin-top:.2rem}.feature-box{background:var(--black);color:var(--white);padding:3rem;border-top:4px solid var(--gold)}.feature-box h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold-light);margin-bottom:1rem}.feature-box p{font-size:.9rem;line-height:1.8;color:rgba(245,242,238,.58);margin-bottom:1.6rem}
-    .model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.model-card{padding:2.7rem;border-right:1px solid rgba(0,0,0,.1)}.model-card:last-child{border-right:0}.model-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(0,0,0,.1)}.model-card h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;margin:.5rem 0 .7rem}.model-card p{font-size:.88rem;line-height:1.75;color:var(--muted)}
-    .services{background:var(--white)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.service-card{padding:2.5rem;border-right:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);position:relative}.service-card:hover{background:var(--soft)}.service-num{font-family:'Cormorant Garamond',serif;font-size:2.7rem;color:rgba(0,0,0,.1)}.service-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;margin:.5rem 0 .7rem}.service-desc{font-size:.87rem;line-height:1.75;color:var(--muted)}.service-link{display:inline-block;margin-top:1.1rem;color:var(--rust);font-size:.74rem;font-weight:600;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(139,58,42,.35);padding-bottom:2px}
-    .proof{background:var(--soft)}.proof-heading{display:flex;justify-content:space-between;align-items:end;gap:3rem}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}.proof-card{display:flex;flex-direction:column;min-height:320px;background:var(--black);color:var(--white);text-decoration:none;border-top:4px solid var(--gold);transition:transform .25s}.proof-card:hover{transform:translateY(-5px)}.proof-card-top{display:flex;justify-content:space-between;padding:1.1rem 1.4rem;color:var(--gold-light);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,.18)}.proof-card-body{padding:1.8rem 1.4rem;display:flex;flex-direction:column;flex:1}.proof-card h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;line-height:1.1;margin-bottom:.9rem}.proof-card p{font-size:.84rem;line-height:1.7;color:rgba(245,242,238,.56)}.proof-link{margin-top:auto;padding-top:1.5rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-    .why{background:var(--white)}.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start}.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.12)}.why-card{background:var(--white);padding:1.8rem;min-height:175px}.why-card span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#9b7624}.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin:.45rem 0 .55rem}.why-card p{font-size:.82rem;line-height:1.7;color:var(--muted)}
-    .audience{background:var(--soft)}.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}.audience-cards{display:flex;flex-direction:column;gap:1px;background:rgba(0,0,0,.1)}.audience-card{background:var(--white);padding:1.7rem 2rem}.audience-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.35rem}.audience-card p{font-size:.82rem;line-height:1.65;color:var(--muted)}
-    .approach{background:var(--black)}.approach .section-label{color:var(--gold-light)}.approach .section-label::before{background:var(--gold)}.approach .section-title{color:var(--white)}.approach .section-body{color:rgba(245,242,238,.55)}.approach-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem}.approach-step{padding-top:1.5rem;border-top:1px solid rgba(201,168,76,.3)}.approach-step-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:rgba(201,168,76,.35)}.approach-step h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin:.4rem 0 .6rem}.approach-step p{font-size:.82rem;line-height:1.75;color:rgba(245,242,238,.46)}
+    .ecosystem-head{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.22);margin-top:3.5rem}.ecosystem-card{background:#141414;padding:2.2rem;min-height:230px;text-decoration:none;transition:background .2s,transform .2s}.ecosystem-card:hover{background:#1d1d1d;transform:translateY(-3px)}.ecosystem-card .num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold)}.ecosystem-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--white);margin:.7rem 0}.ecosystem-card p{font-size:.92rem;line-height:1.75;color:rgba(245,242,238,.5)}.ecosystem-card .link{display:block;margin-top:1.2rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .edtech-feature{background:var(--soft)}.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:6rem;align-items:center}.feature-kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.7rem}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.1);margin-top:1.8rem}.feature-list div{background:var(--white);padding:1.2rem 1.3rem}.feature-list strong{font-size:.86rem}.feature-list span{display:block;color:var(--muted);font-size:.84rem;margin-top:.2rem}.feature-box{background:var(--black);color:var(--white);padding:3rem;border-top:4px solid var(--gold)}.feature-box h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold-light);margin-bottom:1rem}.feature-box p{font-size:.98rem;line-height:1.8;color:rgba(245,242,238,.58);margin-bottom:1.6rem}
+    .model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.model-card{padding:2.7rem;border-right:1px solid rgba(0,0,0,.1)}.model-card:last-child{border-right:0}.model-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(0,0,0,.1)}.model-card h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;margin:.5rem 0 .7rem}.model-card p{font-size:.94rem;line-height:1.75;color:var(--muted)}
+    .services{background:var(--white)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.service-card{padding:2.5rem;border-right:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);position:relative}.service-card:hover{background:var(--soft)}.service-num{font-family:'Cormorant Garamond',serif;font-size:2.7rem;color:rgba(0,0,0,.1)}.service-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;margin:.5rem 0 .7rem}.service-desc{font-size:.93rem;line-height:1.75;color:var(--muted)}.service-link{display:inline-block;margin-top:1.1rem;color:var(--rust);font-size:.74rem;font-weight:600;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(139,58,42,.35);padding-bottom:2px}
+    .proof{background:var(--soft)}.proof-heading{display:flex;justify-content:space-between;align-items:end;gap:3rem}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}.proof-card{display:flex;flex-direction:column;min-height:320px;background:var(--black);color:var(--white);text-decoration:none;border-top:4px solid var(--gold);transition:transform .25s}.proof-card:hover{transform:translateY(-5px)}.proof-card-top{display:flex;justify-content:space-between;padding:1.1rem 1.4rem;color:var(--gold-light);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,.18)}.proof-card-body{padding:1.8rem 1.4rem;display:flex;flex-direction:column;flex:1}.proof-card h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;line-height:1.1;margin-bottom:.9rem}.proof-card p{font-size:.9rem;line-height:1.7;color:rgba(245,242,238,.56)}.proof-link{margin-top:auto;padding-top:1.5rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+    .why{background:var(--white)}.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start}.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.12)}.why-card{background:var(--white);padding:1.8rem;min-height:175px}.why-card span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#9b7624}.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin:.45rem 0 .55rem}.why-card p{font-size:.88rem;line-height:1.7;color:var(--muted)}
+    .audience{background:var(--soft)}.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}.audience-cards{display:flex;flex-direction:column;gap:1px;background:rgba(0,0,0,.1)}.audience-card{background:var(--white);padding:1.7rem 2rem}.audience-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.35rem}.audience-card p{font-size:.88rem;line-height:1.65;color:var(--muted)}
+    .approach{background:var(--black)}.approach .section-label{color:var(--gold-light)}.approach .section-label::before{background:var(--gold)}.approach .section-title{color:var(--white)}.approach .section-body{color:rgba(245,242,238,.55)}.approach-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem}.approach-step{padding-top:1.5rem;border-top:1px solid rgba(201,168,76,.3)}.approach-step-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:rgba(201,168,76,.35)}.approach-step h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin:.4rem 0 .6rem}.approach-step p{font-size:.88rem;line-height:1.75;color:rgba(245,242,238,.46)}
     .cta-section{background:var(--rust);padding:5.5rem 6rem;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:300;color:var(--white);line-height:1.15}.cta-section p{color:rgba(255,255,255,.7);margin-top:.7rem;max-width:700px}.btn-light{background:var(--white);color:var(--rust);padding:1.1rem 2.3rem;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap}
-    footer{background:var(--black);padding:3.5rem 6rem;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;border-top:1px solid rgba(201,168,76,.15);color:var(--white)}.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.7rem}.footer-logo span{color:var(--gold)}.footer-tagline{font-size:.8rem;color:rgba(245,242,238,.38);line-height:1.7;max-width:330px}.footer-col-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}.footer-links a{font-size:.82rem;color:rgba(245,242,238,.48);text-decoration:none}.footer-links a:hover{color:var(--gold)}.footer-bottom{background:var(--black);padding:1.3rem 6rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;gap:1rem}.footer-bottom p{font-size:.72rem;color:rgba(245,242,238,.25)}
+    footer{background:var(--black);padding:3.5rem 6rem;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;border-top:1px solid rgba(201,168,76,.15);color:var(--white)}.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.7rem}.footer-logo span{color:var(--gold)}.footer-tagline{font-size:.86rem;color:rgba(245,242,238,.38);line-height:1.7;max-width:330px}.footer-col-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}.footer-links a{font-size:.86rem;color:rgba(245,242,238,.48);text-decoration:none}.footer-links a:hover{color:var(--gold)}.footer-bottom{background:var(--black);padding:1.3rem 6rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;gap:1rem}.footer-bottom p{font-size:.72rem;color:rgba(245,242,238,.25)}
     @media(max-width:900px){nav{padding:1rem 2rem}.nav-links{gap:1rem}.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:5rem 2rem 4rem}section{padding:5rem 2rem}.ecosystem-head,.feature-grid,.why-grid,.audience-grid{grid-template-columns:1fr;gap:3rem}.ecosystem-grid,.services-grid,.proof-grid{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.model-card{border-right:0;border-bottom:1px solid rgba(0,0,0,.1)}.model-card:last-child{border-bottom:0}.approach-steps{grid-template-columns:1fr 1fr}.cta-section{grid-template-columns:1fr;padding:4rem 2rem}footer{grid-template-columns:1fr;padding:3rem 2rem}.footer-bottom{padding:1.2rem 2rem;flex-direction:column}.proof-heading{flex-direction:column;align-items:flex-start}}
     @media(max-width:620px){.nav-links{display:none}.hero h1{font-size:clamp(3rem,14vw,4.4rem)}.feature-list,.why-cards,.approach-steps{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}}
   </style>
@@ -46,6 +46,7 @@
     <ul class="nav-links">
       <li><a href="#ecosystem">Our Ecosystem</a></li>
       <li><a href="#edtech">Ujamaa EdTech</a></li>
+      <li><a href="#empower-her">E.M.P.O.W.E.R. Her™</a></li>
       <li><a href="#work">Our Work</a></li>
       <li><a href="erika_portfolio.html">Expertise</a></li>
       <li><a href="#contact" class="nav-cta">Start a Project</a></li>
@@ -62,7 +63,7 @@
           <a href="#ecosystem" class="btn-primary">Explore Ujamaa</a>
           <a href="#contact" class="btn-secondary">Work With Us →</a>
         </div>
-        <p class="hero-proof">Education · Technology · Workforce · Entrepreneurship · Innovation</p>
+        <p class="hero-proof">Education · Technology · Workforce · Entrepreneurship · Leadership · Innovation</p>
       </div>
       <div class="hero-right">
         <div class="hero-right-inner">
@@ -79,9 +80,9 @@
       <div class="ecosystem-head">
         <div>
           <div class="section-label">The Ujamaa Ecosystem</div>
-          <h2 class="section-title">Built to grow beyond a single <em>business line.</em></h2>
+          <h2 class="section-title">Three divisions. One <em>enterprise vision.</em></h2>
         </div>
-        <p class="section-body">Ujamaa Enterprises Global is the umbrella. Each business line has a distinct purpose while sharing a common commitment to practical capacity, innovation, and human development.</p>
+        <p class="section-body">Ujamaa Enterprises Global is the umbrella. Each division has a distinct purpose while sharing a common commitment to practical capacity, innovation, and human development.</p>
       </div>
       <div class="ecosystem-grid">
         <a class="ecosystem-card" href="#edtech">
@@ -92,10 +93,32 @@
           <div class="num">02</div><h3>Ujamaa AgriTech</h3>
           <p>Agriculture, STEM, smart farming, regenerative systems, and technology-enabled pathways for future-ready communities.</p><span class="link">Explore the pathway →</span>
         </a>
-        <a class="ecosystem-card" href="#future">
-          <div class="num">03</div><h3>Future Ventures</h3>
-          <p>New ventures, programs, and partnerships can grow within an enterprise architecture designed for expansion.</p><span class="link">See what's next →</span>
+        <a class="ecosystem-card" href="#empower-her">
+          <div class="num">03</div><h3>E.M.P.O.W.E.R. Her™</h3>
+          <p>Life coaching, entrepreneurship, and women's leadership through a structured, NLP-informed coaching framework.</p><span class="link">Explore E.M.P.O.W.E.R. Her™ →</span>
         </a>
+      </div>
+    </section>
+
+
+    <section class="edtech-feature" id="empower-her">
+      <div class="feature-grid">
+        <div>
+          <div class="feature-kicker">E.M.P.O.W.E.R. Her™ · A Ujamaa business division</div>
+          <h2 class="section-title">Women's Leadership & Life Coaching: <em>A framework for building what comes next.</em></h2>
+          <p class="section-body">E.M.P.O.W.E.R. Her™ is a seven-stage life-coaching and women's leadership framework for women building their next chapter through entrepreneurship, professional growth, leadership, and personal development.</p>
+          <div class="feature-list">
+            <div><strong>Life Coaching</strong><span>Structured coaching for personal and professional development</span></div>
+            <div><strong>Entrepreneurship</strong><span>Build, clarify, and strengthen the next chapter</span></div>
+            <div><strong>Women's Leadership</strong><span>Leadership development for women in tech, STEM, and beyond</span></div>
+            <div><strong>Signature Framework</strong><span>Seven stages with each stage as a complete coaching lesson</span></div>
+          </div>
+        </div>
+        <div class="feature-box">
+          <h3>Seven stages. One integrated coaching journey.</h3>
+          <p>The E.M.P.O.W.E.R. Her™ Framework creates a structured coaching experience that can support individual coaching, cohort experiences, and future program offerings. The framework is informed by NLP certification training.</p>
+          <a href="#contact" class="btn-light">Discuss E.M.P.O.W.E.R. Her™</a>
+        </div>
       </div>
     </section>
 
@@ -130,6 +153,18 @@
         <div class="model-card"><div class="model-num">01</div><h3>Design</h3><p>Learning, programs, systems, and experiences are intentionally structured around goals, people, context, and opportunity.</p></div>
         <div class="model-card"><div class="model-num">02</div><h3>Build</h3><p>We translate strategy into practical curricula, digital experiences, technology-enabled solutions, and implementation-ready resources.</p></div>
         <div class="model-card"><div class="model-num">03</div><h3>Enable</h3><p>We equip people and organizations with the knowledge, tools, and capability to use what has been built.</p></div>
+      </div>
+    </section>
+
+    <section class="audience">
+      <div class="audience-grid">
+        <div><div class="section-label">Who We Serve</div><h2 class="section-title">For organizations ready to turn <em>potential into capacity.</em></h2><p class="section-body">Our enterprise ecosystem creates room for different types of organizations to enter through the pathway most relevant to their goals.</p></div>
+        <div class="audience-cards">
+          <div class="audience-card"><h3>Education & Higher Education</h3><p>Curriculum, digital learning, faculty development, AI literacy, and program design.</p></div>
+          <div class="audience-card"><h3>Technology & Innovation</h3><p>Technical learning, onboarding, workforce enablement, and complex-tool learning experiences.</p></div>
+          <div class="audience-card"><h3>Workforce & Professional Organizations</h3><p>Upskilling, professional development, cohort learning, and workforce-readiness programs.</p></div>
+          <div class="audience-card"><h3>Innovation, Agriculture & Community Programs</h3><p>STEM, AgriTech, entrepreneurship, technology-enabled initiatives, and future-focused capacity building.</p></div>
+        </div>
       </div>
     </section>
 
@@ -172,17 +207,7 @@
       </div>
     </section>
 
-    <section class="audience">
-      <div class="audience-grid">
-        <div><div class="section-label">Who We Serve</div><h2 class="section-title">For organizations ready to turn <em>potential into capacity.</em></h2><p class="section-body">Our enterprise ecosystem creates room for different types of organizations to enter through the pathway most relevant to their goals.</p></div>
-        <div class="audience-cards">
-          <div class="audience-card"><h3>Education & Higher Education</h3><p>Curriculum, digital learning, faculty development, AI literacy, and program design.</p></div>
-          <div class="audience-card"><h3>Technology & Innovation</h3><p>Technical learning, onboarding, workforce enablement, and complex-tool learning experiences.</p></div>
-          <div class="audience-card"><h3>Workforce & Professional Organizations</h3><p>Upskilling, professional development, cohort learning, and workforce-readiness programs.</p></div>
-          <div class="audience-card"><h3>Innovation, Agriculture & Community Programs</h3><p>STEM, AgriTech, entrepreneurship, technology-enabled initiatives, and future-focused capacity building.</p></div>
-        </div>
-      </div>
-    </section>
+
 
     <section class="approach" id="approach">
       <div class="section-label">Our Approach</div>
@@ -196,10 +221,7 @@
       </div>
     </section>
 
-    <section id="future" style="padding-top:3rem;padding-bottom:3rem;background:#fff;">
-      <div class="section-label">Growing With Intention</div>
-      <p class="section-body">Ujamaa Enterprises Global is designed to expand thoughtfully. New ventures and partnerships can develop without losing the shared enterprise principle: practical capacity, cooperative value, and human potential.</p>
-    </section>
+
 
     <div class="cta-section" id="contact">
       <div><h2>Let's build something <em>that works.</em></h2><p>Tell us what you are trying to build, improve, or scale. We will help identify the right Ujamaa pathway.</p></div>
@@ -208,10 +230,10 @@
   </main>
 
   <footer>
-    <div><div class="footer-logo">Ujamaa <span>Enterprises Global</span></div><p class="footer-tagline">Where cooperative economics meets human potential. Education, technology, workforce, entrepreneurship, and innovation under one enterprise vision.</p></div>
-    <div><div class="footer-col-title">Explore</div><ul class="footer-links"><li><a href="#ecosystem">Our Ecosystem</a></li><li><a href="#edtech">Ujamaa EdTech</a></li><li><a href="#work">Our Work</a></li><li><a href="erika_portfolio.html">Expertise & Portfolio</a></li></ul></div>
+    <div><div class="footer-logo">Ujamaa <span>Enterprises Global</span></div><p class="footer-tagline">Where cooperative economics meets human potential. Education, technology, workforce, entrepreneurship, leadership, and innovation under one enterprise vision.</p></div>
+    <div><div class="footer-col-title">Explore</div><ul class="footer-links"><li><a href="#ecosystem">Our Ecosystem</a></li><li><a href="#edtech">Ujamaa EdTech</a></li><li><a href="#empower-her">E.M.P.O.W.E.R. Her™</a></li><li><a href="#work">Our Work</a></li><li><a href="erika_portfolio.html">Expertise & Portfolio</a></li></ul></div>
     <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="mailto:AsamoahUET@gmail.com">AsamoahUET@gmail.com</a></li><li><a href="tel:+18045497707">+1 804-549-7707</a></li><li><a href="https://www.linkedin.com/in/erika-asamoah" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
   </footer>
-  <div class="footer-bottom"><p>© 2026 Ujamaa Enterprises Global. All rights reserved.</p><p>Education · Technology · Workforce · Innovation</p></div>
+  <div class="footer-bottom"><p>© 2026 Ujamaa Enterprises Global. All rights reserved.</p><p>Education · Technology · Workforce · Entrepreneurship · Leadership · Innovation</p></div>
 </body>
 </html>
