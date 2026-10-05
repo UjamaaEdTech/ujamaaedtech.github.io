@@ -3,310 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ujamaa EdTech | Workforce Training & Program Development</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Ujamaa Enterprises Global builds education, technology, workforce, and innovation solutions that turn human potential into practical capacity." />
+  <meta name="theme-color" content="#0e0e0e" />
+  <title>Ujamaa Enterprises Global | Human Potential. Practical Capacity.</title>
+  <link rel="canonical" href="https://ujamaaenterprisesglobal.com/" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #0e0e0e; --white: #f5f2ee; --gold: #c9a84c;
-      --gold-light: #e8d5a3; --rust: #8b3a2a; --sage: #4a5c4e;
-      --text: #1a1a1a; --muted: #6b6560;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; background: rgba(245,242,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.02em; color: var(--black); text-decoration: none; }
-    .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.6rem 1.4rem; border-radius: 2px; font-weight: 500 !important; }
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; position: relative; overflow: hidden; }
-    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 6rem; position: relative; z-index: 2; }
-    .hero-eyebrow { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9b7624; margin-bottom: 1.35rem; display: flex; align-items: center; gap: 0.75rem; }
-    .hero-eyebrow::before { content: ''; display: block; width: 2.5rem; height: 2px; background: #9b7624; }
-    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem,5.6vw,5.6rem); font-weight: 600; line-height: 1.02; color: var(--black); margin-bottom: 1.5rem; letter-spacing: -0.025em; }
-    .hero h1 em { font-style: italic; color: var(--rust); }
-    .hero-desc { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 540px; margin-bottom: 2rem; font-weight: 300; }
-    .hero-actions { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.75rem; }
-    .btn-primary { background: var(--rust); color: var(--white); padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--black); }
-    .btn-secondary { color: var(--black); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.2s; }
-    .btn-secondary:hover { color: var(--gold); }
-    .hero-right { position: relative; overflow: hidden; background: var(--black); }
-    .hero-right-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem; background: linear-gradient(135deg,#1a1108 0%,#0e0e0e 60%); }
-    .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.06; background-image: repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%); background-size: 30px 30px; }
-    .hero-stat-group { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1.5rem; }
-    .hero-stat { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
-    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.65rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
-    .hero-stat-label { font-size: 0.8rem; font-weight: 400; color: rgba(245,242,238,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
-    .hero-quote { position: relative; z-index: 2; margin-top: 2.25rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.2); }
-    .hero-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; font-weight: 300; color: rgba(245,242,238,0.7); line-height: 1.6; }
-    .hero-quote span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-style: normal; color: var(--gold); margin-top: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .definition-strip { background: var(--gold); padding: 2rem 6rem; display: flex; align-items: center; gap: 2rem; }
-    .definition-strip p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--black); line-height: 1.6; }
-    .definition-strip strong { font-style: normal; font-weight: 600; }
-    section { padding: 7rem 6rem; }
-    .section-label { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9b7624; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
-    .section-label::before { content: ''; display: block; width: 2.5rem; height: 2px; background: #9b7624; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,3.5vw,3.5rem); font-weight: 300; line-height: 1.15; color: var(--black); margin-bottom: 1.5rem; }
-    .section-title em { font-style: italic; color: var(--rust); }
-    .section-body { font-size: 1rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 560px; }
-    .services { background: #f0ece6; }
-    .proof { background: var(--white); }
-    .why-ujamaa { background: #f0ece6; }
-    .why-layout { display:grid; grid-template-columns: .85fr 1.15fr; gap:6rem; align-items:start; }
-    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.12); }
-    .why-card { background:var(--white); padding:2rem; min-height:190px; }
-    .why-card span { font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:#9b7624; }
-    .why-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:var(--black); margin:.5rem 0 .65rem; }
-    .why-card p { font-size:.84rem; line-height:1.75; color:var(--muted); font-weight:300; }
-
-    .proof-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; }
-    .proof-heading .section-title { margin-bottom: 1rem; }
-    .proof-heading .section-body { margin-bottom: 0; }
-    .proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 4rem; }
-    .proof-card { display: flex; flex-direction: column; min-height: 330px; background: var(--black); color: var(--white); text-decoration: none; border-top: 4px solid var(--gold); transition: transform .25s, background .25s; }
-    .proof-card:hover { transform: translateY(-6px); background: #171717; }
-    .proof-card-top { display:flex; justify-content:space-between; padding: 1.25rem 1.5rem; color: var(--gold-light); font-size:.68rem; font-weight:500; letter-spacing:.11em; text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,.18); }
-    .proof-card-body { padding: 2rem 1.5rem 1.5rem; display:flex; flex-direction:column; flex:1; }
-    .proof-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; line-height:1.1; color:var(--white); margin-bottom:1rem; }
-    .proof-card p { font-size:.88rem; line-height:1.75; color:rgba(245,242,238,.58); font-weight:300; }
-    .proof-link { margin-top:auto; padding-top:2rem; color:var(--gold-light); font-size:.76rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
-
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 4rem; border: 1px solid rgba(0,0,0,0.1); }
-    .service-card { padding: 3rem; border-right: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); transition: background 0.3s; position: relative; overflow: hidden; }
-    .service-card:hover { background: var(--white); }
-    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.3s; }
-    .service-card:hover::before { height: 100%; }
-    .service-link { display: inline-block; margin-top: 1.25rem; color: var(--rust); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; border-bottom: 1px solid rgba(139,58,42,0.35); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
-    .service-link:hover { color: var(--black); border-color: var(--black); }
-
-    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(0,0,0,0.08); line-height: 1; margin-bottom: 1rem; }
-    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--black); margin-bottom: 0.75rem; }
-    .service-desc { font-size: 0.9rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
-    .audience { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-    .audience-cards { display: flex; flex-direction: column; gap: 1px; background: rgba(0,0,0,0.1); }
-    .audience-card { background: var(--white); padding: 2rem 2.5rem; display: flex; align-items: flex-start; gap: 1.5rem; transition: background 0.2s; cursor: default; }
-    .audience-card:hover { background: var(--black); }
-    .audience-card:hover .audience-card-title { color: var(--gold-light); }
-    .audience-card:hover .audience-card-desc { color: rgba(245,242,238,0.5); }
-    .audience-card:hover .audience-icon { color: var(--gold); }
-    .audience-icon { font-size: 1.5rem; margin-top: 0.2rem; transition: color 0.2s; }
-    .audience-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--black); margin-bottom: 0.4rem; transition: color 0.2s; }
-    .audience-card-desc { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; transition: color 0.2s; }
-    .approach { background: var(--black); }
-    .approach .section-title { color: var(--white); }
-    .approach .section-body { color: rgba(245,242,238,0.5); }
-    .approach-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4rem; }
-    .approach-step { position: relative; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.3); }
-    .approach-step-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: rgba(201,168,76,0.2); line-height: 1; position: absolute; top: -1.5rem; right: 0; }
-    .approach-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.75rem; }
-    .approach-step-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,242,238,0.45); font-weight: 300; }
-    .cta-section { background: var(--rust); padding: 6rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
-    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,3vw,3rem); font-weight: 300; color: var(--white); line-height: 1.2; }
-    .cta-section h2 em { font-style: italic; }
-    .btn-light { background: var(--white); color: var(--rust); padding: 1.1rem 2.5rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: background 0.2s; }
-    .btn-light:hover { background: var(--gold-light); }
-    footer { background: var(--black); padding: 4rem 6rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; border-top: 1px solid rgba(201,168,76,0.15); }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
-    .footer-logo span { color: var(--gold); }
-    .footer-tagline { font-size: 0.82rem; color: rgba(245,242,238,0.35); line-height: 1.7; font-weight: 300; }
-    .footer-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer-links a { font-size: 0.85rem; color: rgba(245,242,238,0.45); text-decoration: none; font-weight: 300; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-bottom { background: var(--black); padding: 1.5rem 6rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(245,242,238,0.25); font-weight: 300; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-left > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
-    .hero-proof { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); line-height: 1.7; max-width: 560px; }
-    .hero-eyebrow { animation-delay: 0.1s; }
-    .hero h1 { animation-delay: 0.25s; }
-    .hero-desc { animation-delay: 0.4s; }
-    .hero-actions { animation-delay: 0.55s; }
-    @media (max-width: 900px) {
-      nav { padding: 1.2rem 2rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 5rem 2rem 3rem; }
-      section { padding: 5rem 2rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      .audience { grid-template-columns: 1fr; }
-      .why-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .why-grid { grid-template-columns: 1fr; }
-      .proof-heading { flex-direction: column; align-items: flex-start; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .approach-steps { grid-template-columns: 1fr; }
-      .cta-section { grid-template-columns: 1fr; padding: 4rem 2rem; }
-      footer { grid-template-columns: 1fr; padding: 3rem 2rem; }
-      .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-      .definition-strip { padding: 2rem; }
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--black:#0e0e0e;--white:#f5f2ee;--gold:#c9a84c;--gold-light:#e8d5a3;--rust:#8b3a2a;--green:#214f3a;--text:#1a1a1a;--muted:#6b6560;--soft:#f0ece6}
+    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}a{color:inherit}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(245,242,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.22)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:600;letter-spacing:.03em;color:var(--black);text-decoration:none}.nav-logo span{color:var(--gold)}
+    .nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}.nav-links a{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--gold)}.nav-cta{background:var(--rust);color:var(--white)!important;padding:.65rem 1.25rem;border-radius:2px}
+    .hero{min-height:92vh;display:grid;grid-template-columns:1.12fr .88fr;padding-top:76px;position:relative;overflow:hidden}.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5.5rem 4rem 5.5rem 6rem;position:relative;z-index:2}
+    .eyebrow,.section-label{font-size:.88rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9b7624;margin-bottom:1.15rem;display:flex;align-items:center;gap:.75rem}.eyebrow::before,.section-label::before{content:'';display:block;width:2.3rem;height:2px;background:#9b7624}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.3rem,5.8vw,5.7rem);font-weight:600;line-height:1.01;color:var(--black);margin-bottom:1.3rem;letter-spacing:-.025em}.hero h1 em,.section-title em{font-style:italic;color:var(--rust)}
+    .hero-desc{font-size:1.06rem;line-height:1.78;color:var(--muted);max-width:600px;margin-bottom:2rem;font-weight:300}.hero-actions{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem}
+    .btn-primary{background:var(--rust);color:var(--white);padding:1rem 1.8rem;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px}.btn-primary:hover{background:var(--black)}
+    .btn-secondary{color:var(--black);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}.btn-secondary:hover{color:var(--gold)}
+    .hero-proof{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.7;max-width:620px}
+    .hero-right{position:relative;overflow:hidden;background:var(--black)}.hero-right-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem;background:linear-gradient(135deg,#1a1108 0%,#0e0e0e 60%)}.hero-pattern{position:absolute;inset:0;opacity:.06;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:30px 30px}
+    .hero-panel{position:relative;z-index:2;border-top:1px solid rgba(201,168,76,.28);padding-top:1.8rem}.hero-panel h2{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:300;color:var(--gold-light);line-height:1.1;margin-bottom:1rem}.hero-panel p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(245,242,238,.65);line-height:1.55}
+    section{padding:6.5rem 6rem}.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;line-height:1.12;color:var(--black);margin-bottom:1.3rem}.section-body{font-size:1rem;line-height:1.85;color:var(--muted);font-weight:300;max-width:650px}
+    .ecosystem{background:var(--black);color:var(--white)}.ecosystem .section-label{color:var(--gold-light)}.ecosystem .section-label::before{background:var(--gold)}.ecosystem .section-title{color:var(--white)}.ecosystem .section-body{color:rgba(245,242,238,.58)}
+    .ecosystem-head{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.22);margin-top:3.5rem}.ecosystem-card{background:#141414;padding:2.2rem;min-height:230px;text-decoration:none;transition:background .2s,transform .2s}.ecosystem-card:hover{background:#1d1d1d;transform:translateY(-3px)}.ecosystem-card .num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold)}.ecosystem-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--white);margin:.7rem 0}.ecosystem-card p{font-size:.86rem;line-height:1.75;color:rgba(245,242,238,.5)}.ecosystem-card .link{display:block;margin-top:1.2rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .edtech-feature{background:var(--soft)}.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:6rem;align-items:center}.feature-kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.7rem}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.1);margin-top:1.8rem}.feature-list div{background:var(--white);padding:1.2rem 1.3rem}.feature-list strong{font-size:.86rem}.feature-list span{display:block;color:var(--muted);font-size:.76rem;margin-top:.2rem}.feature-box{background:var(--black);color:var(--white);padding:3rem;border-top:4px solid var(--gold)}.feature-box h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold-light);margin-bottom:1rem}.feature-box p{font-size:.9rem;line-height:1.8;color:rgba(245,242,238,.58);margin-bottom:1.6rem}
+    .model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.model-card{padding:2.7rem;border-right:1px solid rgba(0,0,0,.1)}.model-card:last-child{border-right:0}.model-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(0,0,0,.1)}.model-card h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;margin:.5rem 0 .7rem}.model-card p{font-size:.88rem;line-height:1.75;color:var(--muted)}
+    .services{background:var(--white)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(0,0,0,.1)}.service-card{padding:2.5rem;border-right:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);position:relative}.service-card:hover{background:var(--soft)}.service-num{font-family:'Cormorant Garamond',serif;font-size:2.7rem;color:rgba(0,0,0,.1)}.service-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;margin:.5rem 0 .7rem}.service-desc{font-size:.87rem;line-height:1.75;color:var(--muted)}.service-link{display:inline-block;margin-top:1.1rem;color:var(--rust);font-size:.74rem;font-weight:600;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(139,58,42,.35);padding-bottom:2px}
+    .proof{background:var(--soft)}.proof-heading{display:flex;justify-content:space-between;align-items:end;gap:3rem}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}.proof-card{display:flex;flex-direction:column;min-height:320px;background:var(--black);color:var(--white);text-decoration:none;border-top:4px solid var(--gold);transition:transform .25s}.proof-card:hover{transform:translateY(-5px)}.proof-card-top{display:flex;justify-content:space-between;padding:1.1rem 1.4rem;color:var(--gold-light);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,.18)}.proof-card-body{padding:1.8rem 1.4rem;display:flex;flex-direction:column;flex:1}.proof-card h3{font-family:'Cormorant Garamond',serif;font-size:1.75rem;line-height:1.1;margin-bottom:.9rem}.proof-card p{font-size:.84rem;line-height:1.7;color:rgba(245,242,238,.56)}.proof-link{margin-top:auto;padding-top:1.5rem;color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+    .why{background:var(--white)}.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start}.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.12)}.why-card{background:var(--white);padding:1.8rem;min-height:175px}.why-card span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#9b7624}.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin:.45rem 0 .55rem}.why-card p{font-size:.82rem;line-height:1.7;color:var(--muted)}
+    .audience{background:var(--soft)}.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}.audience-cards{display:flex;flex-direction:column;gap:1px;background:rgba(0,0,0,.1)}.audience-card{background:var(--white);padding:1.7rem 2rem}.audience-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.35rem}.audience-card p{font-size:.82rem;line-height:1.65;color:var(--muted)}
+    .approach{background:var(--black)}.approach .section-label{color:var(--gold-light)}.approach .section-label::before{background:var(--gold)}.approach .section-title{color:var(--white)}.approach .section-body{color:rgba(245,242,238,.55)}.approach-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem}.approach-step{padding-top:1.5rem;border-top:1px solid rgba(201,168,76,.3)}.approach-step-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:rgba(201,168,76,.35)}.approach-step h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin:.4rem 0 .6rem}.approach-step p{font-size:.82rem;line-height:1.75;color:rgba(245,242,238,.46)}
+    .cta-section{background:var(--rust);padding:5.5rem 6rem;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:300;color:var(--white);line-height:1.15}.cta-section p{color:rgba(255,255,255,.7);margin-top:.7rem;max-width:700px}.btn-light{background:var(--white);color:var(--rust);padding:1.1rem 2.3rem;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap}
+    footer{background:var(--black);padding:3.5rem 6rem;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;border-top:1px solid rgba(201,168,76,.15);color:var(--white)}.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.7rem}.footer-logo span{color:var(--gold)}.footer-tagline{font-size:.8rem;color:rgba(245,242,238,.38);line-height:1.7;max-width:330px}.footer-col-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}.footer-links a{font-size:.82rem;color:rgba(245,242,238,.48);text-decoration:none}.footer-links a:hover{color:var(--gold)}.footer-bottom{background:var(--black);padding:1.3rem 6rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;gap:1rem}.footer-bottom p{font-size:.72rem;color:rgba(245,242,238,.25)}
+    @media(max-width:900px){nav{padding:1rem 2rem}.nav-links{gap:1rem}.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:5rem 2rem 4rem}section{padding:5rem 2rem}.ecosystem-head,.feature-grid,.why-grid,.audience-grid{grid-template-columns:1fr;gap:3rem}.ecosystem-grid,.services-grid,.proof-grid{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.model-card{border-right:0;border-bottom:1px solid rgba(0,0,0,.1)}.model-card:last-child{border-bottom:0}.approach-steps{grid-template-columns:1fr 1fr}.cta-section{grid-template-columns:1fr;padding:4rem 2rem}footer{grid-template-columns:1fr;padding:3rem 2rem}.footer-bottom{padding:1.2rem 2rem;flex-direction:column}.proof-heading{flex-direction:column;align-items:flex-start}}
+    @media(max-width:620px){.nav-links{display:none}.hero h1{font-size:clamp(3rem,14vw,4.4rem)}.feature-list,.why-cards,.approach-steps{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
   <nav>
-    <a href="#" class="nav-logo">Ujamaa <span>EdTech</span></a>
+    <a href="#" class="nav-logo">Ujamaa <span>Enterprises Global</span></a>
     <ul class="nav-links">
-      <li><a href="#services">What We Do</a></li>
-      <li><a href="#audience">Who We Serve</a></li>
-      <li><a href="#approach">Our Approach</a></li>
-      <li><a href="erika_portfolio.html">Portfolio</a></li>
-      <li><a href="#contact" class="nav-cta">Work With Us</a></li>
+      <li><a href="#ecosystem">Our Ecosystem</a></li>
+      <li><a href="#edtech">Ujamaa EdTech</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="erika_portfolio.html">Expertise</a></li>
+      <li><a href="#contact" class="nav-cta">Start a Project</a></li>
     </ul>
   </nav>
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Learning & Development:<br>Technology Solutions for Organizations Ready to Grow</p>
-      <h1>Turn complex information into <em>practical capability.</em></h1>
-      <p class="hero-desc">Ujamaa EdTech designs curricula, digital learning, workforce training, and technology-enabled programs that help organizations build the skills, systems, and capabilities their people need to perform.</p>
-      <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Services</a>
-        <a href="#work" class="btn-secondary">See Our Work →</a>
-      </div>
-      <p class="hero-proof">Curriculum Development · eLearning · Workforce Training · EdTech Consulting · AI Literacy</p>
-    </div>
-    <div class="hero-right">
-      <div class="hero-right-inner">
-        <div class="hero-pattern"></div>
-        <div class="hero-stat-group">
-          <div class="hero-stat"><div class="hero-stat-num">Design</div><div class="hero-stat-label">Curriculum & Learning Experiences</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">Build</div><div class="hero-stat-label">Digital Learning & Training Programs</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">Enable</div><div class="hero-stat-label">Technology & AI Literacy</div></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <p class="eyebrow">Ujamaa Enterprises Global</p>
+        <h1>Where cooperative economics meets <em>human potential.</em></h1>
+        <p class="hero-desc">We build education, technology, workforce, and innovation solutions that turn human potential into practical capacity — connecting people, knowledge, systems, and opportunity.</p>
+        <div class="hero-actions">
+          <a href="#ecosystem" class="btn-primary">Explore Ujamaa</a>
+          <a href="#contact" class="btn-secondary">Work With Us →</a>
         </div>
-        <div class="hero-quote">
-          <p>"Ujamaa — cooperative economics through community-driven innovation."</p>
-          <span>Our founding principle</span>
+        <p class="hero-proof">Education · Technology · Workforce · Entrepreneurship · Innovation</p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-right-inner">
+          <div class="hero-pattern"></div>
+          <div class="hero-panel">
+            <h2>One enterprise.<br>Multiple pathways for growth.</h2>
+            <p>Ujamaa connects practical capability-building with the people, organizations, and communities positioned to use it.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <div class="definition-strip" id="ujamaa-definition">
-    <p><strong>Ujamaa (n.):</strong> A philosophy of cooperative economics — the belief that people rise further, faster, <em>together</em>. This is the principle behind every program we build.</p>
-  </div>
-  <section class="services" id="services">
-    <div class="section-label">Start With Your Need</div>
-    <h2 class="section-title">What do you need to <em>build?</em></h2>
-    <p class="section-body">Tell us what you are trying to create, improve, or scale. Ujamaa EdTech can design the learning experience, curriculum, training program, or technology-enabled solution around your goals.</p>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-num">01</div><div class="service-title">Build a Curriculum</div><p class="service-desc">Create a new curriculum, strengthen an existing one, or translate subject-matter expertise into a structured learning pathway.</p><a href="#contact" class="service-link">Discuss a curriculum project →</a></div>
-      <div class="service-card"><div class="service-num">02</div><div class="service-title">Build Digital Learning</div><p class="service-desc">Turn content into engaging eLearning, LMS-ready learning experiences, instructional materials, and digital learning products.</p><a href="#contact" class="service-link">Discuss digital learning →</a></div>
-      <div class="service-card"><div class="service-num">03</div><div class="service-title">Train Your Workforce</div><p class="service-desc">Design workshops, professional development, cohort programs, and workforce learning experiences around the skills your people need.</p><a href="#contact" class="service-link">Discuss workforce training →</a></div>
-      <div class="service-card"><div class="service-num">04</div><div class="service-title">Improve Learning Technology</div><p class="service-desc">Assess learning ecosystems, select practical tools, improve digital workflows, and connect technology decisions to learning goals.</p><a href="#contact" class="service-link">Discuss your technology needs →</a></div>
-      <div class="service-card"><div class="service-num">05</div><div class="service-title">Develop AI Literacy</div><p class="service-desc">Build practical AI literacy programs that help teams understand, evaluate, and use AI tools responsibly in their work.</p><a href="#contact" class="service-link">Discuss AI literacy →</a></div>
-      <div class="service-card"><div class="service-num">06</div><div class="service-title">Design an Education Program</div><p class="service-desc">Bring together curriculum, instruction, technology, and implementation strategy to build an education or professional development program from the ground up.</p><a href="#contact" class="service-link">Discuss a program →</a></div>
-    </div>
-  </section>
-  <section class="proof" id="work">
-    <div class="section-label">Proof of Capability</div>
-    <div class="proof-heading">
-      <div>
-        <h2 class="section-title">See how the work <em>comes together.</em></h2>
-        <p class="section-body">Explore selected UET work across curriculum design, digital technology education, and structured learning experiences. These projects show how we turn complex subject matter into usable learning systems.</p>
+    </section>
+
+    <section class="ecosystem" id="ecosystem">
+      <div class="ecosystem-head">
+        <div>
+          <div class="section-label">The Ujamaa Ecosystem</div>
+          <h2 class="section-title">Built to grow beyond a single <em>business line.</em></h2>
+        </div>
+        <p class="section-body">Ujamaa Enterprises Global is the umbrella. Each business line has a distinct purpose while sharing a common commitment to practical capacity, innovation, and human development.</p>
       </div>
-      <a href="erika_portfolio.html" class="btn-secondary">View Full Portfolio →</a>
-    </div>
-    <div class="proof-grid">
-      <a class="proof-card" href="intro-to-coding.html">
-        <div class="proof-card-top"><span>Curriculum · Digital Learning</span><span>01</span></div>
-        <div class="proof-card-body">
-          <h3>Intro to Coding</h3>
-          <p>A primary-level coding learning experience designed around sequencing, algorithms, activities, and hands-on practice.</p>
-          <span class="proof-link">Explore the work →</span>
-        </div>
-      </a>
-      <a class="proof-card" href="primary-digital-technology.html">
-        <div class="proof-card-top"><span>Curriculum Development</span><span>02</span></div>
-        <div class="proof-card-body">
-          <h3>Primary School Digital Technology</h3>
-          <p>A structured digital technology curriculum translating technical concepts into age-appropriate learning experiences.</p>
-          <span class="proof-link">Explore the work →</span>
-        </div>
-      </a>
-      <a class="proof-card" href="junior-high-ib-style.html">
-        <div class="proof-card-top"><span>Curriculum · Learning Design</span><span>03</span></div>
-        <div class="proof-card-body">
-          <h3>Jr. High School IB-Style Curriculum</h3>
-          <p>A learning architecture integrating subject content with inquiry, learner development, and transferable skills.</p>
-          <span class="proof-link">Explore the work →</span>
-        </div>
-      </a>
-    </div>
-  </section>
-  <section class="why-ujamaa">
-    <div class="why-layout">
-      <div>
-        <div class="section-label">Why Ujamaa</div>
-        <h2 class="section-title">Learning design with <em>systems thinking.</em></h2>
-        <p class="section-body">Ujamaa EdTech brings instructional design, technology, education, and real-world skill development together so organizations can move from information to capability.</p>
+      <div class="ecosystem-grid">
+        <a class="ecosystem-card" href="#edtech">
+          <div class="num">01</div><h3>Ujamaa EdTech</h3>
+          <p>Learning, workforce development, curriculum, digital learning, technology solutions, and practical AI literacy.</p><span class="link">Explore EdTech →</span>
+        </a>
+        <a class="ecosystem-card" href="#future">
+          <div class="num">02</div><h3>Ujamaa AgriTech</h3>
+          <p>Agriculture, STEM, smart farming, regenerative systems, and technology-enabled pathways for future-ready communities.</p><span class="link">Explore the pathway →</span>
+        </a>
+        <a class="ecosystem-card" href="#future">
+          <div class="num">03</div><h3>Future Ventures</h3>
+          <p>New ventures, programs, and partnerships can grow within an enterprise architecture designed for expansion.</p><span class="link">See what's next →</span>
+        </a>
       </div>
+    </section>
+
+    <section class="edtech-feature" id="edtech">
+      <div class="feature-grid">
+        <div>
+          <div class="feature-kicker">Ujamaa EdTech · A flagship business line</div>
+          <h2 class="section-title">Learning & Development: <em>Technology Solutions for Organizations Ready to Grow</em></h2>
+          <p class="section-body">Ujamaa EdTech designs curricula, digital learning, workforce training, and technology-enabled programs that help organizations build the skills, systems, and capabilities their people need to perform.</p>
+          <div class="feature-list">
+            <div><strong>Curriculum Development</strong><span>Learning pathways & instructional systems</span></div>
+            <div><strong>Digital Learning</strong><span>eLearning, LMS & digital products</span></div>
+            <div><strong>Workforce Training</strong><span>Professional learning & enablement</span></div>
+            <div><strong>Technology Solutions</strong><span>Learning ecosystems & practical tools</span></div>
+            <div><strong>AI Literacy</strong><span>Responsible, usable AI capability</span></div>
+            <div><strong>Program Development</strong><span>Education & professional programs</span></div>
+          </div>
+        </div>
+        <div class="feature-box">
+          <h3>Turn complex information into practical capability.</h3>
+          <p>Ujamaa EdTech brings instructional design, technology, education, and real-world skill development together so organizations can move from information to capability.</p>
+          <a href="#services" class="btn-light">Explore EdTech Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="model">
+      <div class="section-label">How Ujamaa Creates Value</div>
+      <h2 class="section-title">Design. Build. <em>Enable.</em></h2>
+      <p class="section-body">Across our business lines, the work follows a simple principle: understand the need, build the right system, and enable people to use it.</p>
+      <div class="model-grid">
+        <div class="model-card"><div class="model-num">01</div><h3>Design</h3><p>Learning, programs, systems, and experiences are intentionally structured around goals, people, context, and opportunity.</p></div>
+        <div class="model-card"><div class="model-num">02</div><h3>Build</h3><p>We translate strategy into practical curricula, digital experiences, technology-enabled solutions, and implementation-ready resources.</p></div>
+        <div class="model-card"><div class="model-num">03</div><h3>Enable</h3><p>We equip people and organizations with the knowledge, tools, and capability to use what has been built.</p></div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-label">Start With Your Need</div>
+      <h2 class="section-title">What do you need to <em>build?</em></h2>
+      <p class="section-body">For organizations working with Ujamaa EdTech, choose the challenge that best matches what you are trying to create, improve, or scale.</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-num">01</div><div class="service-title">Build a Curriculum</div><p class="service-desc">Create a new curriculum, strengthen an existing one, or translate subject-matter expertise into a structured learning pathway.</p><a href="#contact" class="service-link">Discuss a curriculum project →</a></div>
+        <div class="service-card"><div class="service-num">02</div><div class="service-title">Build Digital Learning</div><p class="service-desc">Turn content into engaging eLearning, LMS-ready learning experiences, instructional materials, and digital learning products.</p><a href="#contact" class="service-link">Discuss digital learning →</a></div>
+        <div class="service-card"><div class="service-num">03</div><div class="service-title">Train Your Workforce</div><p class="service-desc">Design workshops, professional development, cohort programs, and workforce learning experiences around the skills your people need.</p><a href="#contact" class="service-link">Discuss workforce training →</a></div>
+        <div class="service-card"><div class="service-num">04</div><div class="service-title">Improve Learning Technology</div><p class="service-desc">Assess learning ecosystems, select practical tools, improve digital workflows, and connect technology decisions to learning goals.</p><a href="#contact" class="service-link">Discuss technology needs →</a></div>
+        <div class="service-card"><div class="service-num">05</div><div class="service-title">Develop AI Literacy</div><p class="service-desc">Build practical AI literacy programs that help teams understand, evaluate, and use AI tools responsibly in their work.</p><a href="#contact" class="service-link">Discuss AI literacy →</a></div>
+        <div class="service-card"><div class="service-num">06</div><div class="service-title">Design an Education Program</div><p class="service-desc">Bring together curriculum, instruction, technology, and implementation strategy to build an education or professional development program from the ground up.</p><a href="#contact" class="service-link">Discuss a program →</a></div>
+      </div>
+    </section>
+
+    <section class="proof" id="work">
+      <div class="section-label">Proof of Capability</div>
+      <div class="proof-heading">
+        <div><h2 class="section-title">See how the work <em>comes together.</em></h2><p class="section-body">Selected Ujamaa EdTech work across curriculum design, digital technology education, and structured learning experiences.</p></div>
+        <a href="erika_portfolio.html" class="btn-secondary">View Full Portfolio →</a>
+      </div>
+      <div class="proof-grid">
+        <a class="proof-card" href="intro-to-coding.html"><div class="proof-card-top"><span>Curriculum · Digital Learning</span><span>01</span></div><div class="proof-card-body"><h3>Intro to Coding</h3><p>A primary-level coding learning experience designed around sequencing, algorithms, activities, and hands-on practice.</p><span class="proof-link">Explore the work →</span></div></a>
+        <a class="proof-card" href="primary-digital-technology.html"><div class="proof-card-top"><span>Curriculum Development</span><span>02</span></div><div class="proof-card-body"><h3>Primary School Digital Technology</h3><p>A structured digital technology curriculum translating technical concepts into age-appropriate learning experiences.</p><span class="proof-link">Explore the work →</span></div></a>
+        <a class="proof-card" href="junior-high-ib-style.html"><div class="proof-card-top"><span>Curriculum · Learning Design</span><span>03</span></div><div class="proof-card-body"><h3>Jr. High School IB-Style Curriculum</h3><p>A learning architecture integrating subject content with inquiry, learner development, and transferable skills.</p><span class="proof-link">Explore the work →</span></div></a>
+      </div>
+    </section>
+
+    <section class="why">
       <div class="why-grid">
-        <div class="why-card"><span>01</span><h3>Instructional Design</h3><p>Learning architecture grounded in adult learning, curriculum design, and purposeful learner experiences.</p></div>
-        <div class="why-card"><span>02</span><h3>Technology Fluency</h3><p>Technology is selected and applied as a practical means to improve learning, delivery, and organizational capability.</p></div>
-        <div class="why-card"><span>03</span><h3>Education + Practice</h3><p>We connect what people need to understand with what they need to do—building learning that transfers into real work.</p></div>
-        <div class="why-card"><span>04</span><h3>Global Perspective</h3><p>Cross-cultural experience informs learning solutions designed for people, institutions, and organizations across contexts.</p></div>
+        <div><div class="section-label">Why Ujamaa</div><h2 class="section-title">Human potential requires <em>systems that work.</em></h2><p class="section-body">Ujamaa brings education, technology, design, and real-world implementation together. The result is work designed to be understood, used, and extended.</p></div>
+        <div class="why-cards">
+          <div class="why-card"><span>01</span><h3>Systems Thinking</h3><p>We connect people, learning, technology, and implementation rather than treating them as isolated pieces.</p></div>
+          <div class="why-card"><span>02</span><h3>Practical Design</h3><p>Ideas become usable curricula, programs, tools, and experiences that people can actually apply.</p></div>
+          <div class="why-card"><span>03</span><h3>Technology Fluency</h3><p>Technology is selected and applied as a practical means to improve capability and organizational performance.</p></div>
+          <div class="why-card"><span>04</span><h3>Global Perspective</h3><p>Cross-context experience informs solutions designed for people, institutions, organizations, and communities.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="audience">
-    <div class="audience">
-      <div>
-        <div class="section-label">Who We Serve</div>
-        <h2 class="section-title">Built for organizations that treat <em>learning as a strategic advantage.</em></h2>
-        <p class="section-body">Ujamaa EdTech works with organizations building stronger curricula, smarter learning systems, and more capable teams.</p>
+    </section>
+
+    <section class="audience">
+      <div class="audience-grid">
+        <div><div class="section-label">Who We Serve</div><h2 class="section-title">For organizations ready to turn <em>potential into capacity.</em></h2><p class="section-body">Our enterprise ecosystem creates room for different types of organizations to enter through the pathway most relevant to their goals.</p></div>
+        <div class="audience-cards">
+          <div class="audience-card"><h3>Education & Higher Education</h3><p>Curriculum, digital learning, faculty development, AI literacy, and program design.</p></div>
+          <div class="audience-card"><h3>Technology & Innovation</h3><p>Technical learning, onboarding, workforce enablement, and complex-tool learning experiences.</p></div>
+          <div class="audience-card"><h3>Workforce & Professional Organizations</h3><p>Upskilling, professional development, cohort learning, and workforce-readiness programs.</p></div>
+          <div class="audience-card"><h3>Innovation, Agriculture & Community Programs</h3><p>STEM, AgriTech, entrepreneurship, technology-enabled initiatives, and future-focused capacity building.</p></div>
+        </div>
       </div>
-      <div class="audience-cards">
-        <div class="audience-card"><div class="audience-icon">🎓</div><div><div class="audience-card-title">Higher Education</div><p class="audience-card-desc">Curriculum development, digital learning, faculty development, AI literacy, and professional education.</p></div></div>
-        <div class="audience-card"><div class="audience-icon">💻</div><div><div class="audience-card-title">Technology & Innovation</div><p class="audience-card-desc">Technical learning, onboarding, workforce enablement, and learning experiences that make complex tools usable.</p></div></div>
-        <div class="audience-card"><div class="audience-icon">🏛️</div><div><div class="audience-card-title">Workforce & Professional Organizations</div><p class="audience-card-desc">Professional development, upskilling, cohort learning, and workforce-readiness programs.</p></div></div>
-        <div class="audience-card"><div class="audience-icon">🌍</div><div><div class="audience-card-title">Education & Mission-Driven Organizations</div><p class="audience-card-desc">Program development, curriculum systems, learning technology, and implementation support for education-focused initiatives.</p></div></div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Understand. Design. Build. <em>Enable.</em></h2>
+      <p class="section-body">The methods vary by engagement, but the experience remains human-centered, evidence-informed, and designed for practical use.</p>
+      <div class="approach-steps">
+        <div class="approach-step"><div class="approach-step-num">01</div><h3>Understand</h3><p>Clarify goals, people, context, constraints, and the capability that needs to change.</p></div>
+        <div class="approach-step"><div class="approach-step-num">02</div><h3>Design</h3><p>Translate needs into an intentional strategy, learning architecture, program, or solution.</p></div>
+        <div class="approach-step"><div class="approach-step-num">03</div><h3>Build</h3><p>Create the curriculum, experience, system, resources, or technology-enabled solution.</p></div>
+        <div class="approach-step"><div class="approach-step-num">04</div><h3>Enable</h3><p>Support implementation, adoption, measurement, and refinement so the work creates usable capacity.</p></div>
       </div>
+    </section>
+
+    <section id="future" style="padding-top:3rem;padding-bottom:3rem;background:#fff;">
+      <div class="section-label">Growing With Intention</div>
+      <p class="section-body">Ujamaa Enterprises Global is designed to expand thoughtfully. New ventures and partnerships can develop without losing the shared enterprise principle: practical capacity, cooperative value, and human potential.</p>
+    </section>
+
+    <div class="cta-section" id="contact">
+      <div><h2>Let's build something <em>that works.</em></h2><p>Tell us what you are trying to build, improve, or scale. We will help identify the right Ujamaa pathway.</p></div>
+      <a href="mailto:AsamoahUET@gmail.com" class="btn-light">Start a Project</a>
     </div>
-  </section>
-  <section class="approach" id="approach">
-    <div class="section-label" style="color: var(--gold);">Our Approach</div>
-    <h2 class="section-title">Evidence-based. <em>Human-centered.</em> AI-informed.</h2>
-    <p class="section-body">We bring together instructional systems design, adult learning theory, and AI methodology to build programs that are rigorous, relevant, and built to last.</p>
-    <div class="approach-steps">
-      <div class="approach-step"><div class="approach-step-num">01</div><div class="approach-step-title">Discover & Assess</div><p class="approach-step-desc">We start with your learners, your gaps, and your goals — not a template. Every engagement begins with listening.</p></div>
-      <div class="approach-step"><div class="approach-step-num">02</div><div class="approach-step-title">Design & Develop</div><p class="approach-step-desc">Using ADDIE and LXD frameworks, we build learning experiences that are accessible, measurable, and scalable.</p></div>
-      <div class="approach-step"><div class="approach-step-num">03</div><div class="approach-step-title">Deliver & Evaluate</div><p class="approach-step-desc">We facilitate, implement, and measure — then refine. Learning that doesn't produce outcomes isn't learning; it's just content.</p></div>
-    </div>
-  </section>
-  <div class="cta-section" id="contact">
-    <h2>Ready to build something <em>that works?</em> Let's talk.</h2>
-    <a href="mailto:AsamoahUET@gmail.com" class="btn-light">Start the Conversation</a>
-  </div>
+  </main>
+
   <footer>
-    <div>
-      <div class="footer-logo">Ujamaa <span>EdTech</span></div>
-      <p class="footer-tagline">Global workforce training and program development. AI-informed. Human-centered. Built for the future of work.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="#services">Strategic Consulting</a></li>
-        <li><a href="#services">Program Design</a></li>
-        <li><a href="#services">Training Delivery</a></li>
-        <li><a href="#services">AI Integration & Literacy</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-links">
-        <li><a href="mailto:AsamoahUET@gmail.com">AsamoahUET@gmail.com</a></li>
-        <li><a href="tel:+18045497707">+1 804-549-7707</a></li>
-        <li><a href="https://www.linkedin.com/in/erika-asamoah" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="erika_portfolio.html">Portfolio</a></li>
-      </ul>
-    </div>
+    <div><div class="footer-logo">Ujamaa <span>Enterprises Global</span></div><p class="footer-tagline">Where cooperative economics meets human potential. Education, technology, workforce, entrepreneurship, and innovation under one enterprise vision.</p></div>
+    <div><div class="footer-col-title">Explore</div><ul class="footer-links"><li><a href="#ecosystem">Our Ecosystem</a></li><li><a href="#edtech">Ujamaa EdTech</a></li><li><a href="#work">Our Work</a></li><li><a href="erika_portfolio.html">Expertise & Portfolio</a></li></ul></div>
+    <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="mailto:AsamoahUET@gmail.com">AsamoahUET@gmail.com</a></li><li><a href="tel:+18045497707">+1 804-549-7707</a></li><li><a href="https://www.linkedin.com/in/erika-asamoah" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
   </footer>
-  <div class="footer-bottom">
-    <p>© 2026 Ujamaa Educational Technologies. All rights reserved.</p>
-    <p>Global Workforce Training & Program Development</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 Ujamaa Enterprises Global. All rights reserved.</p><p>Education · Technology · Workforce · Innovation</p></div>
 </body>
-  </html>
+</html>
